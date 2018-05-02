@@ -5,32 +5,8 @@ usage:
     pip install -t . elasticsearch-curator requests-aws4auth
     zip -r ../upload.zip *
 
-Lambda Role:
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Action": "sts:AssumeRole",
-                "Resource": "*",
-                "Effect": "Allow"
-            }
-        ]
-    }
-
-Amazon ES Access Policy:
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Effect": "Allow",
-                "Principal": {
-                    "AWS": "arn:aws:iam::xxxxxxxxxxxx:role/your-lambda-role"
-                },
-                "Action": "es:*",
-                "Resource": "arn:aws:es:your-region:xxxxxxxxxxxx:domain/your-domain/*"
-            }
-        ]
-    }
+repository:
+    https://github.com/megmogmog1965/lambda-elasticsearch-curator
 '''
 
 import uuid
